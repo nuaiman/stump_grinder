@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stump_grinder/features/contact_us.dart';
 
 // ignore: must_be_immutable
 class PricePage extends StatelessWidget {
@@ -61,17 +62,24 @@ class PricePage extends StatelessWidget {
   Widget build(BuildContext context) {
     getStumpPrice(height, width);
     return Scaffold(
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: 60,
-        color: Colors.amber,
-        child: const Center(
-          child: Text(
-            'Submit',
-            style: TextStyle(
-              fontFamily: 'Bangers',
-              color: Colors.red,
-              fontSize: 32,
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const ContactUs(),
+          ));
+        },
+        child: Container(
+          width: double.infinity,
+          height: 60,
+          color: Colors.amber,
+          child: const Center(
+            child: Text(
+              'Contact Us',
+              style: TextStyle(
+                fontFamily: 'Bangers',
+                color: Colors.red,
+                fontSize: 32,
+              ),
             ),
           ),
         ),
