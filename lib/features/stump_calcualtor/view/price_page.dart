@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stump_grinder/features/contact_us.dart';
+
+import 'contact_us.dart';
 
 // ignore: must_be_immutable
 class PricePage extends StatelessWidget {
@@ -65,7 +66,7 @@ class PricePage extends StatelessWidget {
       bottomNavigationBar: GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const ContactUs(),
+            builder: (context) => const ContactUsScreen(),
           ));
         },
         child: Container(

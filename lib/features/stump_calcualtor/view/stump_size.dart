@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stump_grinder/features/price_page.dart';
-import 'package:stump_grinder/features/widgets.dart';
+import 'package:stump_grinder/features/stump_calcualtor/view/price_page.dart';
+import 'package:stump_grinder/features/stump_calcualtor/widgets/widgets.dart';
 
 class StumpSize extends StatefulWidget {
   const StumpSize({super.key});
