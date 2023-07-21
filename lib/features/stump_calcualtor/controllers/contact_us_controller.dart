@@ -27,6 +27,7 @@ class ContactUsControllerNotifier extends StateNotifier<bool> {
     state = true;
     final imageLinks = await _storageApi.uploadImages(images);
     contactUsModel = contactUsModel.copyWith(images: imageLinks);
+
     final response = await _contactApi
         .submitToContactus(contactUsModel)
         .timeout(const Duration(seconds: 10));

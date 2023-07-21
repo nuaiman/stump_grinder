@@ -10,7 +10,15 @@ import '../../../core/utils.dart';
 import '../controllers/contact_us_controller.dart';
 
 class ContactUsScreen extends ConsumerStatefulWidget {
-  const ContactUsScreen({super.key});
+  final double width;
+  final double height;
+  final double cost;
+  const ContactUsScreen({
+    super.key,
+    required this.width,
+    required this.height,
+    required this.cost,
+  });
 
   @override
   ConsumerState<ContactUsScreen> createState() => _ContactUsScreenState();
@@ -56,6 +64,9 @@ class _ContactUsScreenState extends ConsumerState<ContactUsScreen> {
             address: address!,
             note: note!,
             images: [],
+            width: widget.width,
+            height: widget.height,
+            cost: widget.cost,
           ),
         );
   }

@@ -66,7 +66,11 @@ class PricePage extends StatelessWidget {
       bottomNavigationBar: GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const ContactUsScreen(),
+            builder: (context) => ContactUsScreen(
+              cost: totalPrice!.toDouble(),
+              height: height,
+              width: width,
+            ),
           ));
         },
         child: Container(

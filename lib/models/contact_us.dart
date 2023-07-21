@@ -9,6 +9,9 @@ class ContactUsModel {
   final String address;
   final String note;
   final List<String> images;
+  final double width;
+  final double height;
+  final double cost;
   ContactUsModel({
     required this.phone,
     required this.name,
@@ -16,6 +19,9 @@ class ContactUsModel {
     required this.address,
     required this.note,
     required this.images,
+    required this.width,
+    required this.height,
+    required this.cost,
   });
 
   ContactUsModel copyWith({
@@ -25,6 +31,9 @@ class ContactUsModel {
     String? address,
     String? note,
     List<String>? images,
+    double? width,
+    double? height,
+    double? cost,
   }) {
     return ContactUsModel(
       phone: phone ?? this.phone,
@@ -33,6 +42,9 @@ class ContactUsModel {
       address: address ?? this.address,
       note: note ?? this.note,
       images: images ?? this.images,
+      width: width ?? this.width,
+      height: height ?? this.height,
+      cost: cost ?? this.cost,
     );
   }
 
@@ -45,6 +57,9 @@ class ContactUsModel {
     result.addAll({'address': address});
     result.addAll({'note': note});
     result.addAll({'images': images});
+    result.addAll({'width': width});
+    result.addAll({'height': height});
+    result.addAll({'cost': cost});
 
     return result;
   }
@@ -57,6 +72,9 @@ class ContactUsModel {
       address: map['address'] ?? '',
       note: map['note'] ?? '',
       images: List<String>.from(map['images']),
+      width: map['width']?.toDouble() ?? 0.0,
+      height: map['height']?.toDouble() ?? 0.0,
+      cost: map['cost']?.toDouble() ?? 0.0,
     );
   }
 
@@ -67,7 +85,7 @@ class ContactUsModel {
 
   @override
   String toString() {
-    return 'ContactUs(phone: $phone, name: $name, email: $email, address: $address, note: $note, images: $images)';
+    return 'ContactUsModel(phone: $phone, name: $name, email: $email, address: $address, note: $note, images: $images, width: $width, height: $height, cost: $cost)';
   }
 
   @override
@@ -80,7 +98,10 @@ class ContactUsModel {
         other.email == email &&
         other.address == address &&
         other.note == note &&
-        listEquals(other.images, images);
+        listEquals(other.images, images) &&
+        other.width == width &&
+        other.height == height &&
+        other.cost == cost;
   }
 
   @override
@@ -90,6 +111,9 @@ class ContactUsModel {
         email.hashCode ^
         address.hashCode ^
         note.hashCode ^
-        images.hashCode;
+        images.hashCode ^
+        width.hashCode ^
+        height.hashCode ^
+        cost.hashCode;
   }
 }

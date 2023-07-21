@@ -102,7 +102,11 @@ class StumpType extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const ContactUsScreen(),
+                    builder: (context) => const ContactUsScreen(
+                      cost: 0,
+                      height: 0,
+                      width: 0,
+                    ),
                   ));
                 },
                 style: ElevatedButton.styleFrom(
